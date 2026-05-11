@@ -11,13 +11,113 @@
   <link rel="stylesheet" href="css/responsive.css" />
 </head>
 <body>
-  <header>
-    <h1>The Jewellery Shop</h1>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">The Jewellery Shop</a>
+
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="listing.html">Shop</a>
+        <a href="product.html">Product</a>
+        <a href="cart.html">Cart</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="cart.html">Bag</a>
+      </div>
+    </div>
   </header>
 
   <main>
-    <p>Homepage coming soon.</p>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <p class="eyebrow">Fine Jewellery</p>
+          <h1>Discover the Art of Fine Jewelry</h1>
+          <p class="hero-text">
+            Explore timeless pieces designed for everyday elegance, gifting,
+            and special occasions.
+          </p>
+          <a href="listing.html" class="btn btn-primary">Shop Collection</a>
+        </div>
+
+        <div class="hero-image">
+          <img src="images/hero.jpg" alt="Jewellery hero image" />
+        </div>
+      </div>
+    </section>
+
+    <section class="categories">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Shop by Category</h2>
+        </div>
+
+        <div class="category-grid">
+          <a href="listing.html" class="category-card">
+            <img src="images/category-rings.jpg" alt="Rings" />
+            <span>Rings</span>
+          </a>
+
+          <a href="listing.html" class="category-card">
+            <img src="images/category-necklaces.jpg" alt="Necklaces" />
+            <span>Necklaces</span>
+          </a>
+
+          <a href="listing.html" class="category-card">
+            <img src="images/category-earrings.jpg" alt="Earrings" />
+            <span>Earrings</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured-products">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Featured Products</h2>
+        </div>
+
+        <div class="product-grid">
+          <article class="product-card">
+            <img src="images/product-1.jpg" alt="Eternal Diamond Ring" />
+            <h3>Eternal Diamond Ring</h3>
+            <p>$1,250.00</p>
+            <a href="product.html" class="btn btn-secondary">View Product</a>
+          </article>
+
+          <article class="product-card">
+            <img src="images/product-2.jpg" alt="Mother of Pearl Necklace" />
+            <h3>Mother of Pearl Necklace</h3>
+            <p>$980.00</p>
+            <a href="product.html" class="btn btn-secondary">View Product</a>
+          </article>
+
+          <article class="product-card">
+            <img src="images/product-3.jpg" alt="Starlight Earrings" />
+            <h3>Starlight Earrings</h3>
+            <p>$720.00</p>
+            <a href="product.html" class="btn btn-secondary">View Product</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="service-strip">
+      <div class="container service-grid">
+        <div>Free Shipping</div>
+        <div>15 Days Returns</div>
+        <div>Customer Support</div>
+        <div>Flexible Payment</div>
+      </div>
+    </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 The Jewellery Shop. All rights reserved.</p>
+    </div>
+  </footer>
 
   <script src="js/main.js"></script>
 </body>
