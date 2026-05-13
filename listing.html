@@ -1,3 +1,129 @@
-<main>
-  <p>Listing page coming soon.</p>
-</main>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop | The Jewellery Shop</title>
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">The Jewellery Shop</a>
+
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="listing.html">Shop</a>
+        <a href="product.html">Product</a>
+        <a href="cart.html">Cart</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="cart.html">Bag</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="listing-page">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span>Shop</span>
+      </div>
+
+      <section class="listing-header">
+        <h1>Shop Jewellery</h1>
+        <p>Browse timeless pieces designed for everyday elegance.</p>
+      </section>
+
+      <section class="listing-layout">
+        <aside class="filter-sidebar">
+          <h2>Filters</h2>
+
+          <div class="filter-group">
+            <h3>Category</h3>
+            <label><input type="checkbox" /> Rings</label>
+            <label><input type="checkbox" /> Necklaces</label>
+            <label><input type="checkbox" /> Earrings</label>
+            <label><input type="checkbox" /> Bracelets</label>
+          </div>
+
+          <div class="filter-group">
+            <h3>Price</h3>
+            <label><input type="checkbox" /> Under $500</label>
+            <label><input type="checkbox" /> $500–$1000</label>
+            <label><input type="checkbox" /> $1000+</label>
+          </div>
+        </aside>
+
+        <section class="listing-content">
+          <div class="listing-toolbar">
+            <p>Showing 6 products</p>
+
+            <select>
+              <option>Sort by Popularity</option>
+              <option>Price: Low to High</option>
+              <option>Price: High to Low</option>
+            </select>
+          </div>
+
+          <div class="product-grid">
+            <article class="product-card">
+              <div class="image-placeholder"></div>
+              <h3>Eternal Diamond Ring</h3>
+              <p>$1,250.00</p>
+              <a href="product.html" class="btn btn-secondary">View Product</a>
+            </article>
+
+            <article class="product-card">
+              <div class="image-placeholder"></div>
+              <h3>Mother of Pearl Necklace</h3>
+              <p>$980.00</p>
+              <a href="product.html" class="btn btn-secondary">View Product</a>
+            </article>
+
+            <article class="product-card">
+              <div class="image-placeholder"></div>
+              <h3>Starlight Earrings</h3>
+              <p>$720.00</p>
+              <a href="product.html" class="btn btn-secondary">View Product</a>
+            </article>
+
+            <article class="product-card">
+              <div class="image-placeholder"></div>
+              <h3>Rose Gold Bracelet</h3>
+              <p>$640.00</p>
+              <a href="product.html" class="btn btn-secondary">View Product</a>
+            </article>
+
+            <article class="product-card">
+              <div class="image-placeholder"></div>
+              <h3>Classic Pearl Studs</h3>
+              <p>$310.00</p>
+              <a href="product.html" class="btn btn-secondary">View Product</a>
+            </article>
+
+            <article class="product-card">
+              <div class="image-placeholder"></div>
+              <h3>Golden Charm Pendant</h3>
+              <p>$540.00</p>
+              <a href="product.html" class="btn btn-secondary">View Product</a>
+            </article>
+          </div>
+        </section>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 The Jewellery Shop. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
