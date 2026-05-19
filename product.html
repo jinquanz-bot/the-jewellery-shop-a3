@@ -1,3 +1,154 @@
-<main>
-  <p>Product page coming soon.</p>
-</main>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product | The Jewellery Shop</title>
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">The Jewellery Shop</a>
+
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="listing.html">Shop</a>
+        <a href="product.html">Product</a>
+        <a href="cart.html">Cart</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="cart.html">Bag</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="product-page">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <a href="listing.html">Shop</a>
+        <span>/</span>
+        <span>Bracelet</span>
+      </div>
+
+      <section class="product-detail">
+        <div class="product-media">
+          <div class="large-product-placeholder"></div>
+        </div>
+
+        <div class="product-info">
+          <p class="product-category">Bracelet</p>
+          <h1>Brown Solid Leather Charm Bracelet</h1>
+
+          <div class="rating-row">
+            <span>★★★★★</span>
+            <span>5.0 (1.2k Reviews)</span>
+          </div>
+
+          <p class="product-price">$15.00</p>
+
+          <div class="stock-info">
+            <p>24 people are viewing this right now</p>
+            <p class="low-stock">Only 3 items left in stock</p>
+          </div>
+
+          <div class="quantity-row">
+            <button type="button">−</button>
+            <span>1</span>
+            <button type="button">+</button>
+          </div>
+
+          <div class="product-actions">
+            <button class="btn btn-primary add-to-cart-btn" type="button">
+              Add to Cart
+            </button>
+            <button class="btn btn-secondary" type="button">
+              Buy Now
+            </button>
+          </div>
+
+          <div class="product-support">
+            <div>
+              <strong>Risk Free Shipping</strong>
+              <span>30 Day Returns</span>
+            </div>
+            <div>
+              <strong>Lifetime Warranty</strong>
+              <span>Complimentary Repairs</span>
+            </div>
+            <div>
+              <strong>Free Shipping</strong>
+              <span>On Every Order</span>
+            </div>
+          </div>
+
+          <div class="product-accordions">
+            <details open>
+              <summary>Descriptions</summary>
+              <p>
+                Hand made to order, this charm bracelet is made from brown solid leather
+                and silver hardware. A simple everyday piece designed for refined styling.
+              </p>
+            </details>
+
+            <details>
+              <summary>Shipping</summary>
+              <p>Orders are processed within 1–2 business days.</p>
+            </details>
+
+            <details>
+              <summary>Packaging</summary>
+              <p>Each order is packed carefully in a jewellery gift box.</p>
+            </details>
+
+            <details>
+              <summary>Returns & Cancellations</summary>
+              <p>Returns are available within 15 days if the item is unused.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="recommended-products">
+        <h2>You Might Also Like</h2>
+
+        <div class="product-grid">
+          <article class="product-card">
+            <div class="image-placeholder"></div>
+            <h3>Black Solid Leather Charm Bracelet</h3>
+            <p>$15.00</p>
+            <a href="product.html" class="btn btn-secondary">View Product</a>
+          </article>
+
+          <article class="product-card">
+            <div class="image-placeholder"></div>
+            <h3>Italian Double Knot Earrings</h3>
+            <p>$40.00</p>
+            <a href="product.html" class="btn btn-secondary">View Product</a>
+          </article>
+
+          <article class="product-card">
+            <div class="image-placeholder"></div>
+            <h3>Figaro Diamond Cut Bracelet</h3>
+            <p>$45.00</p>
+            <a href="product.html" class="btn btn-secondary">View Product</a>
+          </article>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 The Jewellery Shop. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
