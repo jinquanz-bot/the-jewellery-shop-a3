@@ -1,3 +1,170 @@
-<main>
-  <p>Cart page coming soon.</p>
-</main>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Cart | The Jewelry Shop</title>
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="top-bar">
+      <div class="container top-bar-inner">
+        <div class="utility-links">
+          <a href="#">Jewelry Concierge</a>
+          <a href="#">Boutique Service</a>
+          <a href="#">Store Locator</a>
+        </div>
+
+        <div class="locale-links">
+          <span>EN</span>
+          <span>AUD</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container header-main">
+      <a href="index.html" class="logo">THE JEWELRY SHOP</a>
+
+      <nav class="main-nav">
+        <a href="listing.html">ANKLETS</a>
+        <a href="listing.html">BRACELETS</a>
+        <a href="listing.html">CHAINS & NECKLACES</a>
+        <a href="listing.html">EARRINGS</a>
+        <a href="listing.html">PENDENTS</a>
+        <a href="listing.html">STERLING SILVER</a>
+        <a href="listing.html">SALE</a>
+        <a href="listing.html">GIFT IDEAS</a>
+      </nav>
+
+      <div class="header-icons">
+        <a href="#">Search</a>
+        <a href="#">♡</a>
+        <a href="#">Account</a>
+        <a href="cart.html">Bag</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="cart-page">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="index.html">HOME</a>
+        <span>›</span>
+        <span>MY CART</span>
+      </nav>
+
+      <section class="cart-title-row">
+        <h1>My Cart</h1>
+
+        <div class="checkout-steps">
+          <span class="active">1. Cart</span>
+          <span>2. Review Order</span>
+          <span>3. Complete</span>
+        </div>
+      </section>
+
+      <section class="cart-layout">
+        <div class="cart-panel">
+          <div class="cart-table-head">
+            <span>Product</span>
+            <span>Price</span>
+            <span>Quantity</span>
+            <span>Subtotal</span>
+          </div>
+
+          <div id="cart-items" class="cart-items">
+            <!-- Cart items will be rendered by JavaScript -->
+          </div>
+
+          <div class="cart-actions-row">
+            <a href="listing.html" class="continue-shopping">← CONTINUE SHOPPING</a>
+            <button type="button" id="clear-cart-btn" class="clear-cart-btn">CLEAR CART</button>
+          </div>
+        </div>
+
+        <aside class="summary-card">
+          <h2>Order Summary</h2>
+
+          <div class="summary-line">
+            <span>Subtotal</span>
+            <strong id="cart-subtotal">$0.00</strong>
+          </div>
+
+          <div class="summary-line">
+            <span>Shipping</span>
+            <strong>Free</strong>
+          </div>
+
+          <div class="summary-line">
+            <span>Estimated GST</span>
+            <strong id="cart-gst">$0.00</strong>
+          </div>
+
+          <div class="summary-total">
+            <span>Total</span>
+            <strong id="cart-total">$0.00</strong>
+          </div>
+
+          <button type="button" id="checkout-btn" class="checkout-btn">
+            PROCEED TO CHECKOUT
+          </button>
+
+          <p class="summary-note">
+            Free shipping and flexible payment options are available for every order.
+          </p>
+        </aside>
+      </section>
+    </div>
+  </main>
+
+  <section class="service-strip">
+    <div class="container service-grid">
+      <div>
+        <strong>Free Shipping</strong>
+        <span>You will love at great low prices</span>
+      </div>
+      <div>
+        <strong>15 Days Returns</strong>
+        <span>Within 15 days for an exchange</span>
+      </div>
+      <div>
+        <strong>Customer Support</strong>
+        <span>24 hours a day, 7 days a week</span>
+      </div>
+      <div>
+        <strong>Flexible Payment</strong>
+        <span>Pay with multiple credit cards</span>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <nav class="footer-links">
+        <a href="listing.html">SHOP</a>
+        <a href="#">ABOUT US</a>
+        <a href="#">CONTACT US</a>
+        <a href="#">INSTAGRAM</a>
+      </nav>
+
+      <strong>THE JEWELRY SHOP</strong>
+
+      <nav class="footer-links">
+        <a href="#">TERMS & CONDITIONS</a>
+        <a href="#">PRIVACY POLICY</a>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2025 The Jewelry Shop Redesign. For all your jewelry needs. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
