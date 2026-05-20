@@ -3,149 +3,245 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Product | The Jewellery Shop</title>
+  <title>Product Details | The Jewelry Shop</title>
 
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/responsive.css" />
 </head>
 <body>
   <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html" class="logo">The Jewellery Shop</a>
+    <div class="top-bar">
+      <div class="container top-bar-inner">
+        <div class="utility-links">
+          <a href="#">Jewelry Concierge</a>
+          <a href="#">Boutique Service</a>
+          <a href="#">Store Locator</a>
+        </div>
+
+        <div class="locale-links">
+          <span>EN</span>
+          <span>AUD</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container header-main">
+      <a href="index.html" class="logo">THE JEWELRY SHOP</a>
 
       <nav class="main-nav">
-        <a href="index.html">Home</a>
-        <a href="listing.html">Shop</a>
-        <a href="product.html">Product</a>
-        <a href="cart.html">Cart</a>
+        <a href="listing.html">ANKLETS</a>
+        <a href="listing.html">BRACELETS</a>
+        <a href="listing.html">CHAINS & NECKLACES</a>
+        <a href="listing.html">EARRINGS</a>
+        <a href="listing.html">PENDENTS</a>
+        <a href="listing.html">STERLING SILVER</a>
+        <a href="listing.html">SALE</a>
+        <a href="listing.html">GIFT IDEAS</a>
       </nav>
 
-      <div class="header-actions">
+      <div class="header-icons">
+        <a href="#">Search</a>
+        <a href="#">♡</a>
+        <a href="#">Account</a>
         <a href="cart.html">Bag</a>
       </div>
     </div>
   </header>
 
-  <main class="product-page">
+  <main class="details-page">
     <div class="container">
-      <div class="breadcrumb">
-        <a href="index.html">Home</a>
-        <span>/</span>
-        <a href="listing.html">Shop</a>
-        <span>/</span>
-        <span>Bracelet</span>
-      </div>
+      <nav class="breadcrumb">
+        <a href="index.html">HOME</a>
+        <span>›</span>
+        <a href="listing.html">SHOP</a>
+        <span>›</span>
+        <span>BRACELET</span>
+      </nav>
 
-      <section class="product-detail">
-        <div class="product-media">
-          <div class="large-product-placeholder"></div>
+      <section class="details-layout">
+        <div class="details-media">
+          <div class="details-image-placeholder"></div>
         </div>
 
-        <div class="product-info">
-          <p class="product-category">Bracelet</p>
-          <h1>Brown Solid Leather Charm Bracelet</h1>
+        <div class="details-info">
+          <h1>Brown Solid Leather<br />Charm Bracelet</h1>
 
-          <div class="rating-row">
-            <span>★★★★★</span>
+          <div class="rating-line">
+            <span class="stars">★★★★★</span>
             <span>5.0 (1.2k Reviews)</span>
           </div>
 
-          <p class="product-price">$15.00</p>
+          <p class="details-price">$15.00</p>
 
-          <div class="stock-info">
-            <p>24 people are viewing this right now</p>
-            <p class="low-stock">Only 3 items left in stock</p>
+          <div class="viewer-line">
+            <span>◎</span>
+            <span>24 People are viewing this right now</span>
           </div>
 
-          <div class="quantity-row">
-            <button type="button">−</button>
-            <span>1</span>
-            <button type="button">+</button>
+          <div class="stock-line">
+            <p>Only <strong>3 items</strong> left in stock</p>
+            <div class="stock-bar"></div>
           </div>
 
-          <div class="product-actions">
-            <button class="btn btn-primary add-to-cart-btn" type="button">
-              Add to Cart
+          <div class="purchase-row">
+            <div class="qty-control">
+              <button type="button">−</button>
+              <span>1</span>
+              <button type="button">+</button>
+            </div>
+
+            <button
+              type="button"
+              class="add-cart-btn-large"
+              data-name="Brown Solid Leather Charm Bracelet"
+              data-price="15"
+            >
+              ADD TO CART
             </button>
-            <button class="btn btn-secondary" type="button">
-              Buy Now
-            </button>
+
+            <button type="button" class="wishlist-square">♡</button>
           </div>
 
-          <div class="product-support">
+          <button type="button" class="buy-now-btn">BUY NOW</button>
+
+          <div class="support-row">
             <div>
+              <span class="support-icon">♡</span>
               <strong>Risk Free Shipping</strong>
-              <span>30 Day Returns</span>
+              <small>30 Day Returns</small>
             </div>
+
             <div>
+              <span class="support-icon">♕</span>
               <strong>Lifetime Warranty</strong>
-              <span>Complimentary Repairs</span>
+              <small>Complimentary Repairs</small>
             </div>
+
             <div>
+              <span class="support-icon">▱</span>
               <strong>Free Shipping</strong>
-              <span>On Every Order</span>
+              <small>On Every Order</small>
             </div>
           </div>
 
-          <div class="product-accordions">
+          <div class="utility-row">
+            <a href="#">COMPARE</a>
+            <a href="#">CONTACT US</a>
+            <a href="#">SHIPPING INFO</a>
+            <a href="#">SHARE</a>
+          </div>
+
+          <div class="details-accordion">
             <details open>
-              <summary>Descriptions</summary>
+              <summary>DESCRIPTIONS</summary>
               <p>
                 Hand made to order, this charm bracelet is made from brown solid leather
-                and silver hardware. A simple everyday piece designed for refined styling.
+                and silver hardware. A refined everyday piece designed for simple styling.
               </p>
             </details>
 
             <details>
-              <summary>Shipping</summary>
+              <summary>SHIPPING</summary>
               <p>Orders are processed within 1–2 business days.</p>
             </details>
 
             <details>
-              <summary>Packaging</summary>
-              <p>Each order is packed carefully in a jewellery gift box.</p>
+              <summary>PACKAGING</summary>
+              <p>Each jewellery item is packed carefully in a gift-ready box.</p>
             </details>
 
             <details>
-              <summary>Returns & Cancellations</summary>
+              <summary>RETURNS & CANCELLATIONS</summary>
               <p>Returns are available within 15 days if the item is unused.</p>
             </details>
           </div>
         </div>
       </section>
 
-      <section class="recommended-products">
-        <h2>You Might Also Like</h2>
+      <section class="related-section">
+        <div class="section-title-row">
+          <h2>You Might Also Like</h2>
+          <div class="small-arrows">
+            <button type="button">←</button>
+            <button type="button">→</button>
+          </div>
+        </div>
 
-        <div class="product-grid">
-          <article class="product-card">
-            <div class="image-placeholder"></div>
+        <div class="product-row">
+          <article class="simple-product-card">
+            <div class="product-image-placeholder"></div>
             <h3>Black Solid Leather Charm Bracelet</h3>
             <p>$15.00</p>
-            <a href="product.html" class="btn btn-secondary">View Product</a>
+            <span class="dot"></span>
           </article>
 
-          <article class="product-card">
-            <div class="image-placeholder"></div>
-            <h3>Italian Double Knot Earrings</h3>
-            <p>$40.00</p>
-            <a href="product.html" class="btn btn-secondary">View Product</a>
+          <article class="simple-product-card">
+            <div class="product-image-placeholder"></div>
+            <h3>Brown Woven Leather Charm Bracelet</h3>
+            <p>$15.00</p>
+            <span class="dot"></span>
           </article>
 
-          <article class="product-card">
-            <div class="image-placeholder"></div>
-            <h3>Figaro Diamond Cut Bracelet</h3>
+          <article class="simple-product-card">
+            <div class="product-image-placeholder"></div>
+            <h3>Figaro Diamond Cut Bracelet 3+1 Link</h3>
             <p>$45.00</p>
-            <a href="product.html" class="btn btn-secondary">View Product</a>
+            <span class="dot"></span>
+          </article>
+
+          <article class="simple-product-card">
+            <div class="product-image-placeholder"></div>
+            <h3>Figaro Becher ID Heart Bracelet</h3>
+            <p>$59.00</p>
+            <span class="dot"></span>
           </article>
         </div>
       </section>
     </div>
   </main>
 
+  <section class="service-strip">
+    <div class="container service-grid">
+      <div>
+        <strong>Free Shipping</strong>
+        <span>You will love at great low prices</span>
+      </div>
+      <div>
+        <strong>15 Days Returns</strong>
+        <span>Within 15 days for an exchange</span>
+      </div>
+      <div>
+        <strong>Customer Support</strong>
+        <span>24 hours a day, 7 days a week</span>
+      </div>
+      <div>
+        <strong>Flexible Payment</strong>
+        <span>Pay with multiple credit cards</span>
+      </div>
+    </div>
+  </section>
+
   <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2026 The Jewellery Shop. All rights reserved.</p>
+    <div class="container footer-inner">
+      <nav class="footer-links">
+        <a href="listing.html">SHOP</a>
+        <a href="#">ABOUT US</a>
+        <a href="#">CONTACT US</a>
+        <a href="#">INSTAGRAM</a>
+      </nav>
+
+      <strong>THE JEWELRY SHOP</strong>
+
+      <nav class="footer-links">
+        <a href="#">TERMS & CONDITIONS</a>
+        <a href="#">PRIVACY POLICY</a>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2025 The Jewelry Shop Redesign. For all your jewelry needs. All rights reserved.</p>
+      </div>
     </div>
   </footer>
 
