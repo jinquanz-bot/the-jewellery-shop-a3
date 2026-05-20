@@ -1,3 +1,215 @@
-<main>
-  <p>Confirmation page coming soon.</p>
-</main>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Review Order | The Jewelry Shop</title>
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="top-bar">
+      <div class="container top-bar-inner">
+        <div class="utility-links">
+          <a href="#">Jewelry Concierge</a>
+          <a href="#">Boutique Service</a>
+          <a href="#">Store Locator</a>
+        </div>
+
+        <div class="locale-links">
+          <span>EN</span>
+          <span>AUD</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container header-main">
+      <a href="index.html" class="logo">THE JEWELRY SHOP</a>
+
+      <nav class="main-nav">
+        <a href="listing.html">ANKLETS</a>
+        <a href="listing.html">BRACELETS</a>
+        <a href="listing.html">CHAINS & NECKLACES</a>
+        <a href="listing.html">EARRINGS</a>
+        <a href="listing.html">PENDENTS</a>
+        <a href="listing.html">STERLING SILVER</a>
+        <a href="listing.html">SALE</a>
+        <a href="listing.html">GIFT IDEAS</a>
+      </nav>
+
+      <div class="header-icons">
+        <a href="#">Search</a>
+        <a href="#">♡</a>
+        <a href="#">Account</a>
+        <a href="cart.html">Bag</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="review-page">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="index.html">HOME</a>
+        <span>›</span>
+        <a href="cart.html">MY CART</a>
+        <span>›</span>
+        <span>REVIEW ORDER</span>
+      </nav>
+
+      <section class="cart-title-row">
+        <h1>Review Order</h1>
+
+        <div class="checkout-steps">
+          <span>1. Cart</span>
+          <span class="active">2. Review Order</span>
+          <span>3. Complete</span>
+        </div>
+      </section>
+
+      <section class="review-layout">
+        <div class="review-left">
+          <section class="review-card">
+            <h2>Selected Products</h2>
+            <div id="review-items" class="review-items">
+              <!-- Order items rendered by JavaScript -->
+            </div>
+          </section>
+
+          <section class="review-card">
+            <h2>Shipping Details</h2>
+
+            <form id="checkout-form" class="checkout-form">
+              <div class="form-grid">
+                <label>
+                  First Name
+                  <input type="text" id="first-name" required />
+                </label>
+
+                <label>
+                  Last Name
+                  <input type="text" id="last-name" required />
+                </label>
+              </div>
+
+              <label>
+                Email Address
+                <input type="email" id="email" required />
+              </label>
+
+              <label>
+                Phone Number
+                <input type="tel" id="phone" required />
+              </label>
+
+              <label>
+                Street Address
+                <input type="text" id="address" required />
+              </label>
+
+              <div class="form-grid">
+                <label>
+                  Suburb
+                  <input type="text" id="suburb" required />
+                </label>
+
+                <label>
+                  Postcode
+                  <input type="text" id="postcode" required />
+                </label>
+              </div>
+
+              <label>
+                Delivery Notes
+                <textarea id="notes" rows="4" placeholder="Optional"></textarea>
+              </label>
+            </form>
+          </section>
+
+          <section class="review-card">
+            <h2>Payment Method</h2>
+
+            <div class="payment-options">
+              <label>
+                <input type="radio" name="payment" checked />
+                Credit Card
+              </label>
+
+              <label>
+                <input type="radio" name="payment" />
+                PayPal
+              </label>
+
+              <label>
+                <input type="radio" name="payment" />
+                Afterpay
+              </label>
+            </div>
+          </section>
+        </div>
+
+        <aside class="review-summary">
+          <h2>Order Summary</h2>
+
+          <div class="summary-line">
+            <span>Subtotal</span>
+            <strong id="review-subtotal">$0.00</strong>
+          </div>
+
+          <div class="summary-line">
+            <span>Shipping</span>
+            <strong>Free</strong>
+          </div>
+
+          <div class="summary-line">
+            <span>Estimated GST</span>
+            <strong id="review-gst">$0.00</strong>
+          </div>
+
+          <div class="summary-total">
+            <span>Total</span>
+            <strong id="review-total">$0.00</strong>
+          </div>
+
+          <button type="button" id="place-order-btn" class="place-order-btn">
+            PLACE ORDER
+          </button>
+
+          <a href="cart.html" class="back-cart-link">← BACK TO CART</a>
+        </aside>
+      </section>
+    </div>
+  </main>
+
+  <div id="confirmation-modal" class="confirmation-modal" aria-hidden="true">
+    <div class="confirmation-card">
+      <button type="button" id="close-confirmation" class="close-confirmation">×</button>
+
+      <div class="success-icon">✓</div>
+
+      <h2>Your order has been placed.</h2>
+
+      <p>
+        Thank you for shopping with The Jewelry Shop. A confirmation email will be sent shortly.
+      </p>
+
+      <div class="confirmation-details">
+        <div>
+          <span>Order Number</span>
+          <strong>#TJS-2025-001</strong>
+        </div>
+
+        <div>
+          <span>Estimated Delivery</span>
+          <strong>3–5 Business Days</strong>
+        </div>
+      </div>
+
+      <a href="index.html" class="confirmation-home-link">BACK TO HOME</a>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
