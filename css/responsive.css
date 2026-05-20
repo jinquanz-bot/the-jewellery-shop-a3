@@ -125,3 +125,64 @@
     flex-wrap: wrap;
   }
 }
+
+/* Product Listing Mobile */
+
+@media (max-width: 768px) {
+  .listing-page {
+    padding-bottom: 40px;
+  }
+
+  .breadcrumb {
+    display: none;
+  }
+
+  .listing-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .listing-sidebar {
+    display: none;
+  }
+
+  .listing-toolbar {
+    display: grid;
+    gap: 14px;
+    margin: 22px 0;
+  }
+
+  .view-controls {
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .view-controls span {
+    font-size: 0.8rem;
+  }
+
+  .sort-controls {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    align-items: stretch;
+  }
+
+  .filter-button,
+  .sort-controls select {
+    width: 100%;
+  }
+
+  .listing-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .listing-image-placeholder {
+    height: 360px;
+  }
+
+  .card-actions {
+    bottom: 62px;
+  }
+}
