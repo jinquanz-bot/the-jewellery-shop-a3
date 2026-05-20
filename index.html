@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>The Jewelry Shop | Home</title>
 
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/responsive.css" />
 </head>
+
 <body>
   <header class="site-header">
     <div class="top-bar">
@@ -49,16 +51,48 @@
   </header>
 
   <main>
+    <!-- Home Hero Section -->
     <section class="home-hero">
       <div class="container">
-        <div class="hero-image-panel">
-          <div class="hero-copy">
+        <div 
+          class="hero-image-panel"
+          style="position: relative; overflow: hidden;"
+        >
+          <!-- Hero image -->
+          <img
+            src="images/home-hero.jpg"
+            alt="Jewellery hero image"
+            style="
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              z-index: 0;
+            "
+          />
+
+          <!-- Dark overlay so white text is readable -->
+          <div
+            style="
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background: rgba(0, 0, 0, 0.25);
+              z-index: 1;
+            "
+          ></div>
+
+          <div class="hero-copy" style="position: relative; z-index: 2;">
             <h1>Discover the Art of Fine Jewelry</h1>
             <p>Elegant Jewelry, Unmatched Value.</p>
             <a href="listing.html" class="text-link">SHOP NOW ↗</a>
           </div>
 
-          <div class="hero-side-note">
+          <div class="hero-side-note" style="position: relative; z-index: 2;">
             <h2>Sterling Silver</h2>
             <p>
               Chains & Necklaces, order yours online! Whatever you're looking for,
@@ -66,7 +100,7 @@
             </p>
           </div>
 
-          <div class="hero-arrows">
+          <div class="hero-arrows" style="position: relative; z-index: 2;">
             <button type="button">←</button>
             <button type="button">→</button>
           </div>
@@ -74,10 +108,12 @@
       </div>
     </section>
 
+    <!-- Popular Products Section -->
     <section class="popular-products">
       <div class="container">
         <div class="section-title-row">
           <h2>Popular Pendants</h2>
+
           <div class="small-arrows">
             <button type="button">←</button>
             <button type="button">→</button>
@@ -86,36 +122,88 @@
 
         <div class="product-row">
           <article class="simple-product-card">
-            <div class="product-image-placeholder"></div>
+            <img
+              src="images/pendant-1.jpg"
+              alt="Symbol Pendant"
+              style="
+                width: 100%;
+                height: 285px;
+                object-fit: cover;
+                display: block;
+                margin-bottom: 14px;
+              "
+            />
+
             <h3>Symbol Pendant</h3>
             <p>$49.00</p>
+
             <div class="colour-dots">
-              <span></span><span></span><span></span>
+              <span></span>
+              <span></span>
+              <span></span>
             </div>
           </article>
 
           <article class="simple-product-card">
-            <div class="product-image-placeholder"></div>
+            <img
+              src="images/pendant-2.jpg"
+              alt="Orca Killer Whale Pendant"
+              style="
+                width: 100%;
+                height: 285px;
+                object-fit: cover;
+                display: block;
+                margin-bottom: 14px;
+              "
+            />
+
             <h3>Orca Killer Whale Pendant</h3>
             <p>$69.00</p>
+
             <div class="colour-dots">
-              <span></span><span></span>
+              <span></span>
+              <span></span>
             </div>
           </article>
 
           <article class="simple-product-card">
-            <div class="product-image-placeholder"></div>
+            <img
+              src="images/pendant-3.jpg"
+              alt="Moto Spear Pendant"
+              style="
+                width: 100%;
+                height: 285px;
+                object-fit: cover;
+                display: block;
+                margin-bottom: 14px;
+              "
+            />
+
             <h3>Moto Spear Pendant</h3>
             <p>$69.00</p>
+
             <div class="colour-dots">
-              <span></span><span></span>
+              <span></span>
+              <span></span>
             </div>
           </article>
 
           <article class="simple-product-card">
-            <div class="product-image-placeholder"></div>
+            <img
+              src="images/pendant-4.jpg"
+              alt="Serenity Pendant"
+              style="
+                width: 100%;
+                height: 285px;
+                object-fit: cover;
+                display: block;
+                margin-bottom: 14px;
+              "
+            />
+
             <h3>Serenity Pendant</h3>
             <p>$59.00</p>
+
             <div class="colour-dots">
               <span></span>
             </div>
@@ -124,20 +212,24 @@
       </div>
     </section>
 
+    <!-- Service Section -->
     <section class="service-strip">
       <div class="container service-grid">
         <div>
           <strong>Free Shipping</strong>
           <span>You will love at great low prices</span>
         </div>
+
         <div>
           <strong>15 Days Returns</strong>
           <span>Within 15 days for an exchange</span>
         </div>
+
         <div>
           <strong>Customer Support</strong>
           <span>24 hours a day, 7 days a week</span>
         </div>
+
         <div>
           <strong>Flexible Payment</strong>
           <span>Pay with multiple credit cards</span>
@@ -145,6 +237,7 @@
       </div>
     </section>
 
+    <!-- Newsletter Section -->
     <section class="newsletter-section">
       <div class="container newsletter-inner">
         <div class="contact-info">
@@ -153,7 +246,11 @@
         </div>
 
         <div class="newsletter-copy">
-          <h2>We’re always open to suggestions.<br />Check out our story & get in touch here.</h2>
+          <h2>
+            We’re always open to suggestions.<br />
+            Check out our story & get in touch here.
+          </h2>
+
           <p>What’s inside? Exclusive sales, new arrivals & much more.</p>
 
           <form class="newsletter-form">
@@ -189,7 +286,10 @@
 
     <div class="footer-bottom">
       <div class="container">
-        <p>© 2025 The Jewelry Shop Redesign. For all your jewelry needs. All rights reserved.</p>
+        <p>
+          © 2025 The Jewelry Shop Redesign. For all your jewelry needs.
+          All rights reserved.
+        </p>
       </div>
     </div>
   </footer>
