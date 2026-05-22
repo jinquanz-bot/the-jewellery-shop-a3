@@ -172,7 +172,7 @@ function renderCart() {
       cartItemsBox.innerHTML +
       "<div class='cart-item'>" +
         "<div class='cart-product-info'>" +
-          "<div class='cart-product-image'></div>" +
+          "<img class='cart-product-image' src='images/product-main.jpg' alt='" + item.name + "' />" +
           "<div>" +
             "<h3>" + item.name + "</h3>" +
             "<button class='remove-item-btn' onclick='removeItem(" + i + ")'>Remove</button>" +

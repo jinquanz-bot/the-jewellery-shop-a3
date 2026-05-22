@@ -667,6 +667,9 @@ button {
 .cart-product-image {
   width: 84px;
   height: 84px;
+  object-fit: contain;
+  background: var(--light-grey);
+  display: block;
 }
 
 .remove-item-btn,
