@@ -766,6 +766,9 @@ button {
 .review-item-image {
   width: 80px;
   height: 80px;
+  object-fit: contain;
+  background: var(--light-grey);
+  display: block;
 }
 
 .checkout-form,

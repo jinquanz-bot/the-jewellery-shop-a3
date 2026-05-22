@@ -310,7 +310,7 @@ function renderCheckoutItems() {
     reviewItemsBox.innerHTML =
       reviewItemsBox.innerHTML +
       "<div class='review-item'>" +
-        "<div class='review-item-image'></div>" +
+        "<img class='review-item-image' src='images/product-main.jpg' alt='" + item.name + "' />" +
         "<div>" +
           "<h3>" + item.name + "</h3>" +
           "<p>Quantity: " + item.quantity + "</p>" +
