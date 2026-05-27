@@ -1,0 +1,152 @@
+/* =========================
+   Header, service strip, newsletter and footer
+   ========================= */
+
+/* Header */
+
+.site-header {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+}
+
+.top-bar {
+  font-size: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.top-bar-inner,
+.header-main,
+.utility-links,
+.locale-links,
+.main-nav,
+.header-icons {
+  display: flex;
+  align-items: center;
+}
+
+.top-bar-inner,
+.header-main {
+  justify-content: space-between;
+}
+
+.top-bar-inner {
+  min-height: 32px;
+}
+
+.header-main {
+  min-height: 76px;
+  gap: 24px;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.utility-links,
+.locale-links,
+.main-nav,
+.header-icons {
+  gap: 20px;
+}
+
+.main-nav {
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.header-icons {
+  font-size: 13px;
+}
+
+/* Service strip */
+
+.service-strip {
+  background: var(--beige);
+  color: var(--white);
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  padding: 28px 0;
+}
+
+.service-grid div {
+  display: grid;
+  gap: 4px;
+}
+
+.service-grid span {
+  font-size: 13px;
+}
+
+/* Newsletter */
+
+.newsletter-section {
+  padding: 42px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.newsletter-inner {
+  display: grid;
+  grid-template-columns: 220px 1fr 220px;
+  gap: 32px;
+  align-items: center;
+  text-align: center;
+}
+
+.newsletter-copy h2 {
+  font-family: Georgia, serif;
+  font-size: 30px;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+
+.newsletter-copy p {
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+}
+
+.newsletter-form input {
+  width: 260px;
+  padding: 12px;
+  border: 1px solid var(--border);
+}
+
+.newsletter-form button {
+  padding: 12px 22px;
+  border: none;
+  background: var(--beige);
+  color: var(--white);
+}
+
+/* Footer */
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 26px 0;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+  font-size: 12px;
+}
+
+.footer-bottom {
+  background: var(--beige);
+  color: var(--white);
+  padding: 16px 0;
+  font-size: 12px;
+}
