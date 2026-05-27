@@ -1,9 +1,6 @@
 
 
-/* 
-  When the page finishes loading, run these functions.
-  Different pages will only use the parts they need.
-*/
+
 window.onload = function () {
   updateBagCount();
   setupAddToCartButtons();
@@ -16,7 +13,6 @@ window.onload = function () {
    1. Cart storage
    ========================= */
 
-/* Get cart from localStorage */
 function getCart() {
   var cartText = localStorage.getItem("jewelryCart");
 
@@ -27,7 +23,6 @@ function getCart() {
   return JSON.parse(cartText);
 }
 
-/* Save cart to localStorage */
 function saveCart(cart) {
   localStorage.setItem("jewelryCart", JSON.stringify(cart));
 }
@@ -44,6 +39,7 @@ function setupAddToCartButtons() {
     buttons[i].onclick = function () {
       var name = this.getAttribute("data-name");
       var price = this.getAttribute("data-price");
+      var image = this.getAttribute("data-image");
 
       if (name === null) {
         name = "Brown Solid Leather Charm Bracelet";
@@ -53,13 +49,17 @@ function setupAddToCartButtons() {
         price = 15;
       }
 
-      addToCart(name, Number(price));
+      if (image === null) {
+        image = "images/product-main.jpg";
+      }
+
+      addToCart(name, Number(price), image);
       alert(name + " has been added to your cart.");
     };
   }
 }
 
-function addToCart(name, price) {
+function addToCart(name, price, image) {
   var cart = getCart();
   var found = false;
 
@@ -74,6 +74,7 @@ function addToCart(name, price) {
     cart.push({
       name: name,
       price: price,
+      image: image,
       quantity: 1
     });
   }
@@ -168,11 +169,17 @@ function renderCart() {
     var itemTotal = item.price * item.quantity;
     subtotal = subtotal + itemTotal;
 
+    var image = item.image;
+
+    if (image === undefined || image === null || image === "") {
+      image = "images/product-main.jpg";
+    }
+
     cartItemsBox.innerHTML =
       cartItemsBox.innerHTML +
       "<div class='cart-item'>" +
         "<div class='cart-product-info'>" +
-          "<img class='cart-product-image' src='images/product-main.jpg' alt='" + item.name + "' />" +
+          "<img class='cart-product-image' src='" + image + "' alt='" + item.name + "' />" +
           "<div>" +
             "<h3>" + item.name + "</h3>" +
             "<button class='remove-item-btn' onclick='removeItem(" + i + ")'>Remove</button>" +
@@ -307,10 +314,16 @@ function renderCheckoutItems() {
     var itemTotal = item.price * item.quantity;
     subtotal = subtotal + itemTotal;
 
+    var image = item.image;
+
+    if (image === undefined || image === null || image === "") {
+      image = "images/product-main.jpg";
+    }
+
     reviewItemsBox.innerHTML =
       reviewItemsBox.innerHTML +
       "<div class='review-item'>" +
-        "<img class='review-item-image' src='images/product-main.jpg' alt='" + item.name + "' />" +
+        "<img class='review-item-image' src='" + image + "' alt='" + item.name + "' />" +
         "<div>" +
           "<h3>" + item.name + "</h3>" +
           "<p>Quantity: " + item.quantity + "</p>" +
