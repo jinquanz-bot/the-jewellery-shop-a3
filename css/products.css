@@ -125,6 +125,8 @@
   display: block;
   height: 360px;
   margin-bottom: 14px;
+  background: var(--light-grey);
+  overflow: hidden;
 }
 
 .simple-product-card h3,
@@ -240,11 +242,25 @@
   color: var(--white);
 }
 
+/* Hover Add to Cart */
+
 .card-actions {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 312px;
   display: grid;
   grid-template-columns: 50px 1fr;
-  margin-top: -62px;
-  margin-bottom: 16px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: 0.2s ease;
+}
+
+.listing-card:hover .card-actions {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 .wishlist-btn,
