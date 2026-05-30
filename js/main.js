@@ -1,8 +1,8 @@
 
 
-
 window.onload = function () {
   updateBagCount();
+  setupProductPage();
   setupAddToCartButtons();
   showCartPage();
   showCheckoutPage();
@@ -29,7 +29,44 @@ function saveCart(cart) {
 
 
 /* =========================
-   2. Add to cart
+   2. Product detail page
+   ========================= */
+
+function setupProductPage() {
+  var productTitle = document.getElementById("product-title");
+
+  if (productTitle === null) {
+    return;
+  }
+
+  var params = new URLSearchParams(window.location.search);
+
+  var name = params.get("name");
+  var price = params.get("price");
+  var image = params.get("image");
+
+  if (name === null || price === null || image === null) {
+    return;
+  }
+
+  var productImage = document.getElementById("product-main-image");
+  var productPrice = document.getElementById("product-price");
+  var addButton = document.getElementById("product-add-btn");
+
+  productTitle.innerText = name;
+  productPrice.innerText = "$" + Number(price).toFixed(2);
+
+  productImage.src = image;
+  productImage.alt = name;
+
+  addButton.setAttribute("data-name", name);
+  addButton.setAttribute("data-price", price);
+  addButton.setAttribute("data-image", image);
+}
+
+
+/* =========================
+   3. Add to cart
    ========================= */
 
 function setupAddToCartButtons() {
@@ -85,7 +122,7 @@ function addToCart(name, price, image) {
 
 
 /* =========================
-   3. Bag count
+   4. Bag count
    ========================= */
 
 function updateBagCount() {
@@ -107,7 +144,7 @@ function updateBagCount() {
 
 
 /* =========================
-   4. Cart page
+   5. Cart page
    ========================= */
 
 function showCartPage() {
@@ -208,7 +245,7 @@ function renderCart() {
 
 
 /* =========================
-   5. Cart item buttons
+   6. Cart item buttons
    ========================= */
 
 function increaseQuantity(index) {
@@ -247,7 +284,7 @@ function removeItem(index) {
 
 
 /* =========================
-   6. Checkout page
+   7. Checkout page
    ========================= */
 
 function showCheckoutPage() {
@@ -342,7 +379,7 @@ function renderCheckoutItems() {
 
 
 /* =========================
-   7. Confirmation modal
+   8. Confirmation modal
    ========================= */
 
 function showConfirmation() {
