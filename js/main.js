@@ -1,8 +1,11 @@
-
+/* =========================
+   Simple JavaScript for Project 3
+   ========================= */
 
 window.onload = function () {
   updateBagCount();
   setupProductPage();
+  setupProductQuantity();
   setupAddToCartButtons();
   showCartPage();
   showCheckoutPage();
@@ -66,7 +69,57 @@ function setupProductPage() {
 
 
 /* =========================
-   3. Add to cart
+   3. Product quantity buttons
+   ========================= */
+
+function setupProductQuantity() {
+  var minusButton = document.getElementById("qty-minus-btn");
+  var plusButton = document.getElementById("qty-plus-btn");
+  var quantityBox = document.getElementById("product-quantity");
+
+  if (minusButton === null || plusButton === null || quantityBox === null) {
+    return;
+  }
+
+  minusButton.onclick = function () {
+    var quantity = Number(quantityBox.innerText);
+
+    if (quantity > 1) {
+      quantity = quantity - 1;
+    }
+
+    quantityBox.innerText = quantity;
+  };
+
+  plusButton.onclick = function () {
+    var quantity = Number(quantityBox.innerText);
+
+    quantity = quantity + 1;
+
+    quantityBox.innerText = quantity;
+  };
+
+  var buyNowButton = document.getElementById("buy-now-btn");
+
+  if (buyNowButton !== null) {
+    buyNowButton.onclick = function () {
+      var addButton = document.getElementById("product-add-btn");
+
+      var name = addButton.getAttribute("data-name");
+      var price = addButton.getAttribute("data-price");
+      var image = addButton.getAttribute("data-image");
+      var quantity = Number(quantityBox.innerText);
+
+      addToCart(name, Number(price), image, quantity);
+
+      window.location.href = "checkout.html";
+    };
+  }
+}
+
+
+/* =========================
+   4. Add to cart
    ========================= */
 
 function setupAddToCartButtons() {
@@ -77,6 +130,13 @@ function setupAddToCartButtons() {
       var name = this.getAttribute("data-name");
       var price = this.getAttribute("data-price");
       var image = this.getAttribute("data-image");
+      var quantity = 1;
+
+      var quantityBox = document.getElementById("product-quantity");
+
+      if (this.classList.contains("add-cart-btn-large") && quantityBox !== null) {
+        quantity = Number(quantityBox.innerText);
+      }
 
       if (name === null) {
         name = "Brown Solid Leather Charm Bracelet";
@@ -90,19 +150,23 @@ function setupAddToCartButtons() {
         image = "images/product-main.jpg";
       }
 
-      addToCart(name, Number(price), image);
-      alert(name + " has been added to your cart.");
+      addToCart(name, Number(price), image, quantity);
+      alert(quantity + " x " + name + " has been added to your cart.");
     };
   }
 }
 
-function addToCart(name, price, image) {
+function addToCart(name, price, image, quantity) {
   var cart = getCart();
   var found = false;
 
+  if (quantity === undefined || quantity === null || quantity < 1) {
+    quantity = 1;
+  }
+
   for (var i = 0; i < cart.length; i++) {
     if (cart[i].name === name) {
-      cart[i].quantity = cart[i].quantity + 1;
+      cart[i].quantity = cart[i].quantity + quantity;
       found = true;
     }
   }
@@ -112,7 +176,7 @@ function addToCart(name, price, image) {
       name: name,
       price: price,
       image: image,
-      quantity: 1
+      quantity: quantity
     });
   }
 
@@ -122,7 +186,7 @@ function addToCart(name, price, image) {
 
 
 /* =========================
-   4. Bag count
+   5. Bag count
    ========================= */
 
 function updateBagCount() {
@@ -144,7 +208,7 @@ function updateBagCount() {
 
 
 /* =========================
-   5. Cart page
+   6. Cart page
    ========================= */
 
 function showCartPage() {
@@ -245,7 +309,7 @@ function renderCart() {
 
 
 /* =========================
-   6. Cart item buttons
+   7. Cart item buttons
    ========================= */
 
 function increaseQuantity(index) {
@@ -284,7 +348,7 @@ function removeItem(index) {
 
 
 /* =========================
-   7. Checkout page
+   8. Checkout page
    ========================= */
 
 function showCheckoutPage() {
@@ -379,7 +443,7 @@ function renderCheckoutItems() {
 
 
 /* =========================
-   8. Confirmation modal
+   9. Confirmation modal
    ========================= */
 
 function showConfirmation() {
