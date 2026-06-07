@@ -280,7 +280,9 @@ function renderCart() {
       cartItemsBox.innerHTML +
       "<div class='cart-item'>" +
         "<div class='cart-product-info'>" +
-          "<img class='cart-product-image' src='" + image + "' alt='" + item.name + "' />" +
+          "<div class='cart-image-box'>" +
+            "<img class='cart-product-image' src='" + image + "' alt='" + item.name + "' />" +
+          "</div>" +
           "<div>" +
             "<h3>" + item.name + "</h3>" +
             "<button class='remove-item-btn' onclick='removeItem(" + i + ")'>Remove</button>" +
@@ -424,7 +426,9 @@ function renderCheckoutItems() {
     reviewItemsBox.innerHTML =
       reviewItemsBox.innerHTML +
       "<div class='review-item'>" +
-        "<img class='review-item-image' src='" + image + "' alt='" + item.name + "' />" +
+        "<div class='review-image-box'>" +
+          "<img class='review-item-image' src='" + image + "' alt='" + item.name + "' />" +
+        "</div>" +
         "<div>" +
           "<h3>" + item.name + "</h3>" +
           "<p>Quantity: " + item.quantity + "</p>" +
