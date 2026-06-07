@@ -4,6 +4,7 @@
 
 window.onload = function () {
   updateBagCount();
+  setupHomepageCarousel();
   setupProductPage();
   setupProductQuantity();
   setupAddToCartButtons();
@@ -32,7 +33,36 @@ function saveCart(cart) {
 
 
 /* =========================
-   2. Product detail page
+   2. Homepage carousel
+   ========================= */
+
+function setupHomepageCarousel() {
+  var track = document.getElementById("popular-products-track");
+  var prevButton = document.getElementById("popular-prev-btn");
+  var nextButton = document.getElementById("popular-next-btn");
+
+  if (track === null || prevButton === null || nextButton === null) {
+    return;
+  }
+
+  nextButton.onclick = function () {
+    track.scrollBy({
+      left: track.clientWidth,
+      behavior: "smooth"
+    });
+  };
+
+  prevButton.onclick = function () {
+    track.scrollBy({
+      left: -track.clientWidth,
+      behavior: "smooth"
+    });
+  };
+}
+
+
+/* =========================
+   3. Product detail page
    ========================= */
 
 function setupProductPage() {
@@ -69,7 +99,7 @@ function setupProductPage() {
 
 
 /* =========================
-   3. Product quantity buttons
+   4. Product quantity buttons
    ========================= */
 
 function setupProductQuantity() {
@@ -119,7 +149,7 @@ function setupProductQuantity() {
 
 
 /* =========================
-   4. Add to cart
+   5. Add to cart
    ========================= */
 
 function setupAddToCartButtons() {
@@ -186,7 +216,7 @@ function addToCart(name, price, image, quantity) {
 
 
 /* =========================
-   5. Bag count
+   6. Bag count
    ========================= */
 
 function updateBagCount() {
@@ -208,7 +238,7 @@ function updateBagCount() {
 
 
 /* =========================
-   6. Cart page
+   7. Cart page
    ========================= */
 
 function showCartPage() {
@@ -311,7 +341,7 @@ function renderCart() {
 
 
 /* =========================
-   7. Cart item buttons
+   8. Cart item buttons
    ========================= */
 
 function increaseQuantity(index) {
@@ -350,7 +380,7 @@ function removeItem(index) {
 
 
 /* =========================
-   8. Checkout page
+   9. Checkout page
    ========================= */
 
 function showCheckoutPage() {
@@ -447,7 +477,7 @@ function renderCheckoutItems() {
 
 
 /* =========================
-   9. Confirmation modal
+   10. Confirmation modal
    ========================= */
 
 function showConfirmation() {
