@@ -121,12 +121,23 @@
   margin-bottom: 14px;
 }
 
+/* Listing product image */
+
 .listing-image-placeholder {
   display: block;
+  width: 100%;
   height: 360px;
   margin-bottom: 14px;
   background: var(--light-grey);
   overflow: hidden;
+}
+
+.listing-product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 /* Homepage product image */
