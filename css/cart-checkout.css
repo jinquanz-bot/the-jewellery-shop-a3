@@ -2,7 +2,10 @@
    Cart, checkout and confirmation modal
    ========================= */
 
-/* Cart page */
+
+/* =========================
+   Cart page
+   ========================= */
 
 .cart-page,
 .review-page {
@@ -39,42 +42,77 @@
   display: grid;
   grid-template-columns: 1fr 360px;
   gap: 40px;
+  align-items: start;
 }
 
-.cart-table-head,
-.cart-item {
-  display: grid;
-  grid-template-columns: 1.6fr 0.7fr 0.8fr 0.8fr;
-  gap: 16px;
+.cart-left {
+  width: 100%;
+}
+
+.cart-selection-row {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid var(--border);
-  padding: 18px 0;
+  margin-bottom: 22px;
+  font-size: 14px;
 }
 
-.cart-table-head {
-  color: var(--muted);
-  font-size: 12px;
-  text-transform: uppercase;
+.cart-selection-row input {
+  accent-color: var(--beige);
+  margin-right: 8px;
 }
 
-.cart-product-info {
+.cart-selection-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.cart-icon-button {
+  width: 42px;
+  height: 42px;
+  border: none;
+  background: #f8eeee;
+  color: var(--red);
+  font-size: 16px;
+}
+
+.wishlist-move-btn {
+  height: 42px;
+  padding: 0 22px;
+  border: 1px solid var(--border);
+  background: var(--white);
+  color: var(--beige);
+  font-size: 13px;
+}
+
+.cart-card-list {
   display: grid;
-  grid-template-columns: 110px 1fr;
   gap: 18px;
-  align-items: center;
 }
 
-.cart-image-box {
-  width: 110px;
-  height: 110px;
+.cart-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 150px 1fr 34px;
+  gap: 18px;
+  border: 1px solid var(--border);
+  padding: 14px;
+  align-items: start;
+  background: var(--white);
+}
+
+.cart-card-image-box {
+  width: 150px;
+  height: 150px;
   background: var(--light-grey);
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
 }
 
-.cart-product-image {
+.cart-card-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -82,12 +120,33 @@
   display: block;
 }
 
-.remove-item-btn,
-.clear-cart-btn {
-  border: none;
-  background: none;
+.cart-card-content {
+  padding-top: 4px;
+}
+
+.cart-card-content h3 {
+  font-size: 18px;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+
+.cart-card-price {
+  color: var(--red);
+  margin-bottom: 10px;
+}
+
+.cart-card-meta {
   color: var(--muted);
-  text-decoration: underline;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.cart-card-qty-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  font-size: 13px;
 }
 
 .cart-qty-control {
@@ -95,6 +154,7 @@
   grid-template-columns: 34px 34px 34px;
   border: 1px solid var(--border);
   width: max-content;
+  height: 32px;
 }
 
 .cart-qty-control button {
@@ -103,59 +163,161 @@
 }
 
 .cart-qty-control span {
-  text-align: center;
-  padding-top: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-card-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.cart-card-remove {
+  border: none;
+  background: none;
+  font-size: 18px;
+  line-height: 1;
+  color: var(--text);
+  justify-self: end;
+}
+
+.remove-item-btn {
+  border: none;
+  background: none;
+  color: var(--muted);
+  text-decoration: underline;
+  padding: 0;
+  margin-top: 6px;
 }
 
 .cart-actions-row {
   display: flex;
   justify-content: space-between;
-  margin-top: 24px;
+  align-items: center;
+  margin-top: 26px;
 }
+
+.cart-actions-row a {
+  font-size: 14px;
+}
+
+.clear-cart-btn {
+  border: none;
+  background: none;
+  color: var(--muted);
+  text-decoration: underline;
+  font-size: 14px;
+}
+
+.empty-cart-message {
+  color: var(--muted);
+  border: 1px solid var(--border);
+  padding: 26px;
+}
+
+
+/* =========================
+   Order summary
+   ========================= */
 
 .summary-card,
 .review-summary,
 .review-card {
   border: 1px solid var(--border);
   padding: 26px;
+  background: var(--white);
 }
 
 .summary-card h2,
 .review-summary h2,
 .review-card h2 {
   font-family: Georgia, serif;
-  font-size: 26px;
+  font-size: 30px;
   font-weight: normal;
-  margin-bottom: 22px;
+  margin-bottom: 24px;
 }
 
 .summary-line,
 .summary-total {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   border-bottom: 1px solid var(--border);
   padding: 14px 0;
 }
 
+.summary-line strong,
+.summary-total strong {
+  font-weight: bold;
+}
+
 .summary-total {
   border-bottom: none;
-  font-size: 18px;
+  font-size: 17px;
+  margin-top: 4px;
+}
+
+.discount-box {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.discount-box label {
+  display: block;
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.discount-input-row {
+  display: grid;
+  grid-template-columns: 1fr 90px;
+}
+
+.discount-input-row input {
+  border: 1px solid var(--border);
+  border-right: none;
+  padding: 12px;
+}
+
+.discount-input-row button {
+  border: none;
+  background: var(--beige);
+  color: var(--white);
+  font-size: 13px;
+}
+
+.free-delivery {
+  color: #1c9a45;
+  text-transform: uppercase;
 }
 
 .checkout-btn,
 .place-order-btn {
   width: 100%;
+  min-height: 50px;
+  border: none;
+  background: var(--beige);
+  color: var(--white);
   margin-top: 20px;
 }
 
 .summary-note,
-.empty-cart-message,
 .empty-review-message {
   color: var(--muted);
   margin-top: 14px;
+  line-height: 1.5;
 }
 
-/* Checkout / review page */
+
+/* =========================
+   Checkout / review page
+   ========================= */
 
 .review-left {
   display: grid;
@@ -175,14 +337,10 @@
   width: 100px;
   height: 100px;
   background: var(--light-grey);
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-}
-
-.review-item-price {
-  color: var(--red);
 }
 
 .review-item-image {
@@ -191,6 +349,10 @@
   object-fit: cover;
   object-position: center;
   display: block;
+}
+
+.review-item-price {
+  color: var(--red);
 }
 
 .checkout-form,
@@ -229,7 +391,10 @@
   color: var(--muted);
 }
 
-/* Confirmation modal */
+
+/* =========================
+   Confirmation modal
+   ========================= */
 
 .confirmation-modal {
   position: fixed;
@@ -299,4 +464,120 @@
   background: var(--beige);
   color: var(--white);
   padding: 14px 24px;
+}
+
+
+/* =========================
+   Mobile cart and checkout
+   ========================= */
+
+@media (max-width: 600px) {
+  .cart-title-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .cart-title-row h1 {
+    font-size: 34px;
+  }
+
+  .checkout-steps {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .cart-layout,
+  .review-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-selection-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .cart-selection-actions {
+    width: 100%;
+  }
+
+  .wishlist-move-btn {
+    flex: 1;
+  }
+
+  .cart-card {
+    grid-template-columns: 110px 1fr 24px;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .cart-card-image-box {
+    width: 110px;
+    height: 110px;
+  }
+
+  .cart-card-content h3 {
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+
+  .cart-card-price,
+  .cart-card-meta,
+  .cart-card-qty-row,
+  .cart-card-note {
+    font-size: 12px;
+  }
+
+  .cart-card-note {
+    align-items: flex-start;
+  }
+
+  .cart-qty-control {
+    grid-template-columns: 30px 30px 30px;
+  }
+
+  .cart-actions-row {
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .summary-card,
+  .review-card,
+  .review-summary {
+    padding: 22px;
+  }
+
+  .summary-card h2,
+  .review-card h2,
+  .review-summary h2 {
+    font-size: 26px;
+  }
+
+  .review-item {
+    grid-template-columns: 82px 1fr;
+    gap: 14px;
+  }
+
+  .review-item-price {
+    grid-column: 2;
+  }
+
+  .review-image-box {
+    width: 82px;
+    height: 82px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .confirmation-card {
+    width: 100%;
+    padding: 32px 22px;
+  }
+
+  .confirmation-details {
+    grid-template-columns: 1fr;
+  }
 }

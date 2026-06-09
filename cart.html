@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Cart | The Jewelry Shop</title>
+
+  <title>Cart | The Jewelry Shop</title>
 
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/header-footer.css" />
@@ -11,6 +12,7 @@
   <link rel="stylesheet" href="css/cart-checkout.css" />
   <link rel="stylesheet" href="css/responsive.css" />
 </head>
+
 <body>
   <header class="site-header">
     <div class="top-bar">
@@ -59,7 +61,7 @@
         <span>MY CART</span>
       </nav>
 
-      <section class="cart-title-row">
+      <div class="cart-title-row">
         <h1>My Cart</h1>
 
         <div class="checkout-steps">
@@ -67,24 +69,27 @@
           <span>2. Review Order</span>
           <span>3. Complete</span>
         </div>
-      </section>
+      </div>
 
       <section class="cart-layout">
-        <div class="cart-panel">
-          <div class="cart-table-head">
-            <span>Product</span>
-            <span>Price</span>
-            <span>Quantity</span>
-            <span>Subtotal</span>
+        <div class="cart-left">
+          <div class="cart-selection-row">
+            <div>
+              <input type="checkbox" checked />
+              <span id="cart-selected-count">0 Item Selected</span>
+            </div>
+
+            <div class="cart-selection-actions">
+              <button type="button" id="clear-cart-btn" class="cart-icon-button">🗑</button>
+              <button type="button" class="wishlist-move-btn">MOVE TO WISHLIST</button>
+            </div>
           </div>
 
-          <div id="cart-items" class="cart-items">
-            <!-- Cart items will be rendered by JavaScript -->
-          </div>
+          <div id="cart-items" class="cart-card-list"></div>
 
           <div class="cart-actions-row">
-            <a href="listing.html" class="continue-shopping">← CONTINUE SHOPPING</a>
-            <button type="button" id="clear-cart-btn" class="clear-cart-btn">CLEAR CART</button>
+            <a href="listing.html">← CONTINUE SHOPPING</a>
+            <button type="button" id="clear-cart-link" class="clear-cart-btn">CLEAR CART</button>
           </div>
         </div>
 
@@ -96,9 +101,13 @@
             <strong id="cart-subtotal">$0.00</strong>
           </div>
 
-          <div class="summary-line">
-            <span>Shipping</span>
-            <strong>Free</strong>
+          <div class="discount-box">
+            <label for="discount-code">Enter Discount Code</label>
+
+            <div class="discount-input-row">
+              <input id="discount-code" type="text" />
+              <button type="button">APPLY</button>
+            </div>
           </div>
 
           <div class="summary-line">
@@ -106,12 +115,17 @@
             <strong id="cart-gst">$0.00</strong>
           </div>
 
+          <div class="summary-line">
+            <span>Delivery Fee</span>
+            <strong class="free-delivery">Free</strong>
+          </div>
+
           <div class="summary-total">
             <span>Total</span>
             <strong id="cart-total">$0.00</strong>
           </div>
 
-          <button type="button" id="checkout-btn" class="checkout-btn">
+          <button id="checkout-btn" type="button" class="checkout-btn">
             PROCEED TO CHECKOUT
           </button>
 
@@ -129,14 +143,17 @@
         <strong>Free Shipping</strong>
         <span>You will love at great low prices</span>
       </div>
+
       <div>
         <strong>15 Days Returns</strong>
         <span>Within 15 days for an exchange</span>
       </div>
+
       <div>
         <strong>Customer Support</strong>
         <span>24 hours a day, 7 days a week</span>
       </div>
+
       <div>
         <strong>Flexible Payment</strong>
         <span>Pay with multiple credit cards</span>
@@ -163,11 +180,19 @@
 
     <div class="footer-bottom">
       <div class="container">
-        <p>© 2025 The Jewelry Shop Redesign. For all your jewelry needs. All rights reserved.</p>
+        <p>
+          © 2025 The Jewelry Shop Redesign. For all your jewelry needs.
+          All rights reserved.
+        </p>
       </div>
     </div>
   </footer>
 
+  <script src="js/storage.js"></script>
+  <script src="js/home.js"></script>
+  <script src="js/product.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/checkout.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

@@ -410,21 +410,14 @@
   object-fit: contain;
   object-position: center;
   display: block;
-  transform-origin: center;
 }
 
-/* Product specific image zoom */
+/* Important: no desktop transform, otherwise product image becomes stretched/cropped */
 
-.product-main-image.product-image-horizontal {
-  transform: scale(1.7);
-}
-
-.product-main-image.product-image-bracelet {
-  transform: scale(1.25);
-}
-
+.product-main-image.product-image-horizontal,
+.product-main-image.product-image-bracelet,
 .product-main-image.product-image-pendant {
-  transform: scale(1.1);
+  transform: none;
 }
 
 .details-info h1 {
@@ -562,20 +555,4 @@
 .details-accordion p {
   color: var(--muted);
   margin-top: 10px;
-}
-
-/* Mobile product image zoom */
-
-@media (max-width: 600px) {
-  .product-main-image.product-image-horizontal {
-    transform: scale(2.35);
-  }
-
-  .product-main-image.product-image-bracelet {
-    transform: scale(1.45);
-  }
-
-  .product-main-image.product-image-pendant {
-    transform: scale(1.2);
-  }
 }
