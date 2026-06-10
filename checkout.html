@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Review Order | The Jewelry Shop</title>
 
   <link rel="stylesheet" href="css/base.css" />
@@ -11,6 +12,7 @@
   <link rel="stylesheet" href="css/cart-checkout.css" />
   <link rel="stylesheet" href="css/responsive.css" />
 </head>
+
 <body>
   <header class="site-header">
     <div class="top-bar">
@@ -43,7 +45,10 @@
       </nav>
 
       <div class="header-icons">
-        <a href="#">Search</a>
+        <form class="search-form">
+          <input class="search-input" type="text" placeholder="Search" />
+        </form>
+
         <a href="#">♡</a>
         <a href="#">Account</a>
         <a href="cart.html">Bag</a>
@@ -51,7 +56,7 @@
     </div>
   </header>
 
-  <main class="review-page">
+  <main class="review-order-page">
     <div class="container">
       <nav class="breadcrumb">
         <a href="index.html">HOME</a>
@@ -61,7 +66,7 @@
         <span>REVIEW ORDER</span>
       </nav>
 
-      <section class="cart-title-row">
+      <div class="review-title-row">
         <h1>Review Order</h1>
 
         <div class="checkout-steps">
@@ -69,143 +74,133 @@
           <span class="active">2. Review Order</span>
           <span>3. Complete</span>
         </div>
-      </section>
+      </div>
 
-      <section class="review-layout">
-        <div class="review-left">
-          <section class="review-card">
-            <h2>Selected Products</h2>
-            <div id="review-items" class="review-items">
-              <!-- Order items rendered by JavaScript -->
+      <section class="review-order-layout">
+        <div class="review-order-left">
+          <div class="review-progress">
+            <div class="review-progress-line"></div>
+
+            <div class="review-progress-step">
+              <div class="review-progress-icon">⌂</div>
+              <span>Address</span>
             </div>
+
+            <div class="review-progress-step">
+              <div class="review-progress-icon">▣</div>
+              <span>Payment Method</span>
+            </div>
+
+            <div class="review-progress-step">
+              <div class="review-progress-icon">▤</div>
+              <span>Review</span>
+            </div>
+          </div>
+
+          <p class="estimated-delivery">
+            Estimated Delivery: February 25, 2025
+          </p>
+
+          <div id="review-items" class="prototype-review-items"></div>
+
+          <section class="review-info-section">
+            <div>
+              <h2>Shipping Address</h2>
+              <p>Alex Williams</p>
+              <span>4140 Parker Rd. 31134</span>
+            </div>
+
+            <button type="button" class="edit-small-btn">✎</button>
           </section>
 
-          <section class="review-card">
-            <h2>Shipping Details</h2>
-
-            <form id="checkout-form" class="checkout-form">
-              <div class="form-grid">
-                <label>
-                  First Name
-                  <input type="text" id="first-name" required />
-                </label>
-
-                <label>
-                  Last Name
-                  <input type="text" id="last-name" required />
-                </label>
-              </div>
-
-              <label>
-                Email Address
-                <input type="email" id="email" required />
-              </label>
-
-              <label>
-                Phone Number
-                <input type="tel" id="phone" required />
-              </label>
-
-              <label>
-                Street Address
-                <input type="text" id="address" required />
-              </label>
-
-              <div class="form-grid">
-                <label>
-                  Suburb
-                  <input type="text" id="suburb" required />
-                </label>
-
-                <label>
-                  Postcode
-                  <input type="text" id="postcode" required />
-                </label>
-              </div>
-
-              <label>
-                Delivery Notes
-                <textarea id="notes" rows="4" placeholder="Optional"></textarea>
-              </label>
-            </form>
-          </section>
-
-          <section class="review-card">
-            <h2>Payment Method</h2>
-
-            <div class="payment-options">
-              <label>
-                <input type="radio" name="payment" checked />
-                Credit Card
-              </label>
-
-              <label>
-                <input type="radio" name="payment" />
-                PayPal
-              </label>
-
-              <label>
-                <input type="radio" name="payment" />
-                Afterpay
-              </label>
+          <section class="review-info-section">
+            <div>
+              <h2>Payment Method</h2>
+              <p>Credit Card</p>
+              <span>8291 3746 XX89 2635</span>
             </div>
+
+            <button type="button" class="edit-small-btn">✎</button>
           </section>
         </div>
 
-        <aside class="review-summary">
-          <h2>Order Summary</h2>
-
+        <aside class="prototype-summary-card">
           <div class="summary-line">
             <span>Subtotal</span>
             <strong id="review-subtotal">$0.00</strong>
           </div>
 
           <div class="summary-line">
-            <span>Shipping</span>
-            <strong>Free</strong>
-          </div>
-
-          <div class="summary-line">
-            <span>Estimated GST</span>
+            <span>Taxes</span>
             <strong id="review-gst">$0.00</strong>
           </div>
 
-          <div class="summary-total">
-            <span>Total</span>
+          <div class="summary-line">
+            <span>Delivery Fee</span>
+            <strong class="free-delivery">FREE</strong>
+          </div>
+
+          <div class="summary-total prototype-grand-total">
+            <span>Grand Total</span>
             <strong id="review-total">$0.00</strong>
           </div>
 
-          <button type="button" id="place-order-btn" class="place-order-btn">
+          <button id="place-order-btn" type="button" class="place-order-btn">
             PLACE ORDER
           </button>
-
-          <a href="cart.html" class="back-cart-link">← BACK TO CART</a>
         </aside>
       </section>
     </div>
   </main>
 
-  <div id="confirmation-modal" class="confirmation-modal" aria-hidden="true">
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <nav class="footer-links">
+        <a href="listing.html">SHOP</a>
+        <a href="#">ABOUT US</a>
+        <a href="#">CONTACT US</a>
+        <a href="#">INSTAGRAM</a>
+      </nav>
+
+      <strong>THE JEWELRY SHOP</strong>
+
+      <nav class="footer-links">
+        <a href="#">TERMS & CONDITIONS</a>
+        <a href="#">PRIVACY POLICY</a>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>
+          © 2025 The Jewelry Shop Redfern: For all your jewelry needs.
+          All Rights Reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <div id="confirmation-modal" class="confirmation-modal">
     <div class="confirmation-card">
-      <button type="button" id="close-confirmation" class="close-confirmation">×</button>
+      <button id="close-confirmation" type="button" class="close-confirmation">×</button>
 
       <div class="success-icon">✓</div>
 
-      <h2>Your order has been placed.</h2>
+      <h2>Order Placed Successfully</h2>
 
       <p>
-        Thank you for shopping with The Jewelry Shop. A confirmation email will be sent shortly.
+        Thank you for shopping with The Jewelry Shop. Your order has been received.
       </p>
 
       <div class="confirmation-details">
         <div>
-          <span>Order Number</span>
-          <strong>#TJS-2025-001</strong>
+          <strong>Order Number</strong>
+          <span>#JS2025</span>
         </div>
 
         <div>
-          <span>Estimated Delivery</span>
-          <strong>3–5 Business Days</strong>
+          <strong>Status</strong>
+          <span>Confirmed</span>
         </div>
       </div>
 
@@ -218,6 +213,7 @@
   <script src="js/product.js"></script>
   <script src="js/cart.js"></script>
   <script src="js/checkout.js"></script>
+  <script src="js/search.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

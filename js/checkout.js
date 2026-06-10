@@ -1,6 +1,6 @@
 /* =========================
    Checkout page
-   Shows order review and confirmation modal
+   Review order and confirmation modal
    ========================= */
 
 function showCheckoutPage() {
@@ -16,16 +16,10 @@ function showCheckoutPage() {
 
   if (placeOrderButton !== null) {
     placeOrderButton.onclick = function () {
-      var form = document.getElementById("checkout-form");
       var cart = getCart();
 
       if (cart.length === 0) {
         alert("Your cart is empty.");
-        return;
-      }
-
-      if (form.checkValidity() === false) {
-        form.reportValidity();
         return;
       }
 
@@ -38,6 +32,7 @@ function showCheckoutPage() {
   if (closeButton !== null) {
     closeButton.onclick = function () {
       hideConfirmation();
+      window.location.href = "index.html";
     };
   }
 }
@@ -75,17 +70,24 @@ function renderCheckoutItems() {
 
     reviewItemsBox.innerHTML =
       reviewItemsBox.innerHTML +
-      "<div class='review-item'>" +
-        "<div class='review-image-box'>" +
-          "<img class='review-item-image' src='" + image + "' alt='" + item.name + "' />" +
+      "<div class='prototype-review-item'>" +
+        "<div class='prototype-review-image-box'>" +
+          "<img class='prototype-review-image' src='" + image + "' alt='" + item.name + "' />" +
         "</div>" +
 
-        "<div>" +
+        "<div class='prototype-review-content'>" +
           "<h3>" + item.name + "</h3>" +
-          "<p>Quantity: " + item.quantity + "</p>" +
+          "<p class='prototype-review-price'>$" + item.price.toFixed(2) + "</p>" +
+
+          "<div class='prototype-review-qty'>" +
+            "<span>QTY:</span>" +
+            "<button type='button' onclick='decreaseCheckoutQuantity(" + i + ")'>−</button>" +
+            "<span>" + item.quantity + "</span>" +
+            "<button type='button' onclick='increaseCheckoutQuantity(" + i + ")'>+</button>" +
+          "</div>" +
         "</div>" +
 
-        "<strong class='review-item-price'>$" + itemTotal.toFixed(2) + "</strong>" +
+        "<button type='button' class='prototype-review-remove' onclick='removeCheckoutItem(" + i + ")'>×</button>" +
       "</div>";
   }
 
@@ -95,6 +97,40 @@ function renderCheckoutItems() {
   subtotalBox.innerText = "$" + subtotal.toFixed(2);
   gstBox.innerText = "$" + gst.toFixed(2);
   totalBox.innerText = "$" + total.toFixed(2);
+}
+
+function increaseCheckoutQuantity(index) {
+  var cart = getCart();
+
+  cart[index].quantity = cart[index].quantity + 1;
+
+  saveCart(cart);
+  renderCheckoutItems();
+  updateBagCount();
+}
+
+function decreaseCheckoutQuantity(index) {
+  var cart = getCart();
+
+  if (cart[index].quantity > 1) {
+    cart[index].quantity = cart[index].quantity - 1;
+  } else {
+    cart.splice(index, 1);
+  }
+
+  saveCart(cart);
+  renderCheckoutItems();
+  updateBagCount();
+}
+
+function removeCheckoutItem(index) {
+  var cart = getCart();
+
+  cart.splice(index, 1);
+
+  saveCart(cart);
+  renderCheckoutItems();
+  updateBagCount();
 }
 
 function showConfirmation() {
